@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Container, Row, Col } from 'react-grid-system';
-import {TextField,Button,Grid } from '@material-ui/core';
+import {TextField,Button } from '@material-ui/core';
 const ud = require('urban-dictionary')
 
 const style = {
@@ -23,15 +23,23 @@ var style1 = {
   position: "fixed",
   left: "0",
   bottom: "0",
-  height: "60px",
+  height: "40px",
   width: "100%",
 }
 var header ={
-  padding: '40px',
+ 
   textAlign: 'center',
   background: '#1abc9c',
   color: 'white',
   fontSize: '30px'
+}
+var body={
+  flex: 1,
+  width: '100%',
+  height: '100%',
+  overflowY: 'scroll',
+  boxSizing: 'content-box',
+  overflow: 'hidden',
 }
 class App extends Component{
   
@@ -79,14 +87,14 @@ class App extends Component{
         <Row>
             <Col >
             <center><h1>Word Play English Dictionary</h1></center> <br></br>
-            <center><h6>Have fun</h6></center>
+            
             </Col>
            
           </Row>
         </div>
           
           </Container>
-          <Container>
+          <Container style={body}> 
           <Row>
             <Col >
               <form  noValidate autoComplete="off">
@@ -122,8 +130,8 @@ class App extends Component{
   
 
 
-      <Grid item xs={12}>
-        <div style={style1}>
+      <Container>
+      <div style={style1}>
             <hr></hr>
               All Rights Reserved!-Tek Talk    
               <p style={{
@@ -133,8 +141,10 @@ class App extends Component{
             
       
         </div>
+      </Container>
         
-        </Grid>
+        
+       
       </div>
     );
 
