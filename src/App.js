@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-grid-system';
-import {TextField,InputLabel,Button,Grid } from '@material-ui/core';
-import { makeStyles } from "@material-ui/core/styles";
-//import Defenition from './components/defenition'
+import {TextField,Button,Grid } from '@material-ui/core';
 const ud = require('urban-dictionary')
 
 const style = {
@@ -103,7 +99,7 @@ class App extends Component{
               
             </Col>
           </Row>
-          {this.state.clicked==true?<div>
+          {this.state.clicked===true?<div>
           <Container>
           <Row>
             <label><b>Definition</b></label><br></br>
@@ -118,7 +114,7 @@ class App extends Component{
           
           :null}
 
-          {this.state.error!=''?<div>
+          {this.state.error!==''?<div>
           <label>{this.state.error}</label>
           </div>:null}
         </Container>
